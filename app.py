@@ -1,8 +1,12 @@
 from flask import Flask, render_template, request
 import psycopg2
 
+DB_NAME = "AuthApp"
+DB_USER = "postgres"
+DB_PASSWORD = None  # Change
+
 app = Flask(__name__)
-conn = psycopg2.connect(dbname="AuthApp", user="postgres", password="admin")
+conn = psycopg2.connect(dbname=DB_NAME, user=DB_USER, password=DB_PASSWORD)
 
 
 def database_query(query, variables=None):
